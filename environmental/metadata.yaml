@@ -1,0 +1,22 @@
+name: Environmental
+summary: Environmental datasets to feed ESG reporting and analysis
+
+catalog: s3
+schema_name: workshop
+cluster: free-cluster
+
+contacts:
+ - arne.ottens@starburstdata.com
+
+links:
+ - label: ESG Investing (OECD)
+   uri: https://www.oecd.org/finance/esg-investing.htm
+ - label: ESG datasets
+   uri: https://databank.worldbank.org/source/environment-social-and-governance-(esg)-data
+ - label: 'European Environment Agency datasets '
+   uri: https://www.eea.europa.eu/themes/air/data-and-maps/data#c0=5&c11=&c5=all&b_start=0
+
+tags:
+ - esg
+ - environmental
+ - co2

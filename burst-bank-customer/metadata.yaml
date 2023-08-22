@@ -1,0 +1,19 @@
+name: Burst Bank Customer
+summary: Customer data for a 360 view
+
+catalog: s3
+schema_name: workshop
+cluster: free-cluster
+
+contacts:
+ - arne.ottens@starburstdata.com
+
+links:
+ - name: Dashboard
+   uri: https://powerbi.com
+
+tags:
+ - risk
+ - Auto Loans
+ - customer
+ - credit
