@@ -1,0 +1,42 @@
+name: Data Products Deployment
+
+#on:
+#  push:
+#    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Data Product Definitions
+      uses: actions/checkout@v3
+      
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+    
+    - name: Install sepdpc
+      run: |
+        echo ${{ secrets.PAT }} | gh auth login --with-token
+        echo "machine github.com login ottensa password ${{ secrets.PAT }}" > ~/.netrc
+        cat ~/.netrc
+        python -m pip install --upgrade pip
+        pip install git+https://github.com/ottensa/sbdpc.git
+   
+    - name: Validate Repo
+      run: |
+        sbdpc validate $GITHUB_WORKSPACE
+    
+    - name: Publish Repo
+      run: |
+        sbdpc publish $GITHUB_WORKSPACE
+      env:
+        SEPDPC_HOST: ${{ vars.SEPDPC_HOST }}
+        SEPDPC_USER: ${{ vars.SEPDPC_USER }}
+        SEPDPC_TOKEN: ${{ vars.SEPDPC_TOKEN }}
