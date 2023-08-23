@@ -1,8 +1,8 @@
 name: Data Products Deployment
 
-#on:
-#  push:
-#    branches: [ "main" ]
+on:
+  push:
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -28,15 +28,7 @@ jobs:
         cat ~/.netrc
         python -m pip install --upgrade pip
         pip install git+https://github.com/ottensa/sbdpc.git
-   
-    - name: Validate Repo
-      run: |
-        sbdpc validate $GITHUB_WORKSPACE
     
     - name: Publish Repo
       run: |
         sbdpc publish $GITHUB_WORKSPACE
-      env:
-        SEPDPC_HOST: ${{ vars.SEPDPC_HOST }}
-        SEPDPC_USER: ${{ vars.SEPDPC_USER }}
-        SEPDPC_TOKEN: ${{ vars.SEPDPC_TOKEN }}
