@@ -2,7 +2,7 @@ name: Federation Sample Product
 summary: The intention of this data product is to give an example of a data product and to show query federation.
 
 catalog: s3
-schema: workshop
+schema_name: workshop
 cluster: free-cluster
 
 contacts:
