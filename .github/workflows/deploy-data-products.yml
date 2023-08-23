@@ -23,7 +23,6 @@ jobs:
     
     - name: Install sepdpc
       run: |
-        echo ${{ secrets.PAT }} | gh auth login --with-token
         echo "machine github.com login ottensa password ${{ secrets.PAT }}" > ~/.netrc
         cat ~/.netrc
         python -m pip install --upgrade pip
