@@ -2,7 +2,7 @@ name: Environmental
 summary: Environmental datasets to feed ESG reporting and analysis
 
 catalog: s3
-schema_name: workshop
+schema_name: esg
 cluster: free-cluster
 
 contacts:
